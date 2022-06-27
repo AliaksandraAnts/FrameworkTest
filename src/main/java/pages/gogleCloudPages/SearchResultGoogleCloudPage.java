@@ -11,7 +11,6 @@ public class SearchResultGoogleCloudPage extends BasePage {
     @FindBy(xpath = "//div[@class='gsc-thumbnail-inside']//a/child::b[text()='Google Cloud Pricing Calculator']")
     private WebElement foundedResultBtn;
 
-
     public SearchResultGoogleCloudPage(WebDriver driver) {
         super(driver);
     }
@@ -19,6 +18,7 @@ public class SearchResultGoogleCloudPage extends BasePage {
     public GoogleCloudPricingCalculatorPage pricingCalculatorSearch() {
         waitElement(foundedResultBtn);
         logger.info("Pricing calculator page open!");
+        waitElement(foundedResultBtn);
         foundedResultBtn.click();
         return new GoogleCloudPricingCalculatorPage(webDriver);
     }

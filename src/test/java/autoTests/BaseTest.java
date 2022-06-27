@@ -1,21 +1,18 @@
 package autoTests;
 
 import driver.DriverSingleton;
-import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
-import utils.ScreenOnTestFailure;
+import utils.AllureListener;
 
-import java.net.MalformedURLException;
+import static driver.DriverSingleton.webDriver;
 
-@Listeners({ScreenOnTestFailure.class})
+@Listeners({AllureListener.class})
 public abstract class BaseTest {
 
-    public WebDriver webDriver;
-
     @BeforeMethod(alwaysRun = true)
-    public void browserSetUp() throws MalformedURLException {
+    public void browserSetUp() {
         webDriver = DriverSingleton.getDriver();
     }
 

@@ -29,10 +29,6 @@ public class GoogleCloudMainPage extends BasePage {
         super(driver);
     }
 
-    protected GoogleCloudMainPage getGoogleCloudMainPage() {
-        return new GoogleCloudMainPage(this.webDriver);
-    }
-
     public SearchResultGoogleCloudPage inputInSearchField(String txt) {
         searchBtn.click();
         searchBtn.sendKeys(txt);
@@ -51,7 +47,7 @@ public class GoogleCloudMainPage extends BasePage {
     }
 
     public GoogleCloudGamingPage gamingBtnClick() {
-        click(gamingBtn);
+        gamingBtn.click();
         return new GoogleCloudGamingPage(webDriver);
     }
 

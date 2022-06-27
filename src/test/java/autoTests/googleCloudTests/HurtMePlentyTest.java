@@ -1,18 +1,19 @@
 package autoTests.googleCloudTests;
 
-import autoTests.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.gogleCloudPages.GoogleCloudMainPage;
 import pages.gogleCloudPages.GoogleCloudPricingCalculatorPage;
+
+import static driver.DriverSingleton.webDriver;
 
 public class HurtMePlentyTest extends GoogleCloudBaseTest {
 
 
     @Test(groups = "Smoke")
     public void checkPrisingCalculatorTest() {
-        GoogleCloudMainPage googleCloudMainPage = new GoogleCloudMainPage(webDriver);
         getGoogleCloudSiteMainPage();
+        GoogleCloudMainPage googleCloudMainPage = new GoogleCloudMainPage(webDriver);
         GoogleCloudPricingCalculatorPage googleCloudPricingCalculatorPage = googleCloudMainPage
                 .inputInSearchField("Google Cloud Platform Pricing Calculator")
                 .pricingCalculatorSearch()
